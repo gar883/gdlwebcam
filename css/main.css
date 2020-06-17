@@ -391,17 +391,12 @@ section.seccion p{
 section.programa{
     position: relative;
 }
-@media (min-width:992px){
-
 
 div.contenedor-video{
     max-width: 100%;
     overflow-x: hidden;
-<<<<<<< HEAD
     display: block;
-=======
-    
->>>>>>> master
+
 }
 
 div.contenido-programa{
@@ -411,14 +406,12 @@ div.contenido-programa{
     height: 100%;
     width: 100%;
 }
-<<<<<<< HEAD
-}
+
+
 .contenedor-video{
     display: none;
 } 
-=======
 
->>>>>>> master
 .programa-evento{
     background: rgba(255, 255, 255, .7);
     padding: 1.5rem;
