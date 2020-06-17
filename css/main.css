@@ -732,7 +732,10 @@ div.detalle-evento{
     /*MAPA*/
     .mapa{
         height: 42rem;
-        background: green;
+        background: url(../img/mapa.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
     /*TESTIMONIALES*/
     .testimoniales{
