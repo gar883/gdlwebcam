@@ -608,31 +608,46 @@ div.detalle-evento{
 
 /*CONTADOR*/
     .parallax{
-        background: url(../img/bg-resumen.jpg);
-        background-size: cover;
-        background-position: center center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        width: 100%;
-        height: 100%;
-        filter: brightness(.8);
-        -webkit-filter:brightness(.8);
+       
+            background: url(../img/bg-resumen.jpg);
+            background-size: cover;
+            background-position: center center;
+        
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            filter: brightness(.8);
+            -webkit-filter:brightness(.8);
+            
     }
+   
+
     .contador{
         position: relative;
         height: auto;
     }
-   
 
+    
     .resumen-evento{
         position: relative;
         padding: 12rem 0;
         
     }
-
+        
+    
+}    @media (max-width:480px){
+    
+    .resumen-evento li p{
+        color: var(--color-principal);
+    }
+    .resumen-evento li{
+        color: black!important;
+    }
+}
     .resumen-evento li{
         width: 50%;
         float: left;
@@ -641,7 +656,7 @@ div.detalle-evento{
         text-transform: uppercase;
         font-family: 'Oswald', sans-serif;
         font-size: 2.4rem;
-    }
+    } 
     @media (min-width:992px){
         .resumen-evento li{
             width: 25%;
