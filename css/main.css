@@ -380,10 +380,15 @@ section.seccion p{
 section.programa{
     position: relative;
 }
+@media (min-width:992px){
+
+
 div.contenedor-video{
     max-width: 100%;
     overflow-x: hidden;
+    display: block;
 }
+
 div.contenido-programa{
     position: absolute;
     top: 0;
@@ -391,6 +396,10 @@ div.contenido-programa{
     height: 100%;
     width: 100%;
 }
+}
+.contenedor-video{
+    display: none;
+} 
 .programa-evento{
     background: rgba(255, 255, 255, .7);
     padding: 1.5rem;
