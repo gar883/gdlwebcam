@@ -510,7 +510,7 @@ div.detalle-evento{
 .contenedor-invitados {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-gap: 2rem;
 
 
@@ -665,6 +665,7 @@ div.detalle-evento{
         text-transform: uppercase;
         font-family: 'Oswald', sans-serif;
         font-size: 2.4rem;
+        
     } 
     @media (min-width:992px){
         .resumen-evento li{
@@ -806,7 +807,7 @@ div.detalle-evento{
     .newsletter::before{
         background: url(../img/bg-newsletter.jpg);
         content:'';
-         background-size: cover;
+        background-size: cover;
         background-position: center center;
         position: absolute;
         top: 0;
