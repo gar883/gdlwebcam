@@ -639,8 +639,15 @@ div.detalle-evento{
     }
         
     
+}    @media (max-width:480px){
+    
+    .resumen-evento li p{
+        color: var(--color-principal);
+    }
+    .resumen-evento li{
+        color: black!important;
+    }
 }
-   
     .resumen-evento li{
         width: 50%;
         float: left;
