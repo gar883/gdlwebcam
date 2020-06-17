@@ -86,6 +86,7 @@ textarea {
   resize: vertical;
 }
 
+
 /* ==========================================================================
    Author's custom styles
 ======================================================================= */
@@ -93,6 +94,7 @@ textarea {
 img{
     max-width: 100%;
 }
+
 body{
     background: #f2f2f2;
     font-family: 'Open Sans', sans-serif;
@@ -371,6 +373,15 @@ section.seccion p{
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
+
+}
+@media (max-width:762px){
+    .video-principal{
+        display: contents;
+    }
+    .contenido-programa{
+        display: contents;
+    }
 }
 .iconos-programa{
     margin-right: 3px;
@@ -386,7 +397,11 @@ section.programa{
 div.contenedor-video{
     max-width: 100%;
     overflow-x: hidden;
+<<<<<<< HEAD
     display: block;
+=======
+    
+>>>>>>> master
 }
 
 div.contenido-programa{
@@ -396,14 +411,19 @@ div.contenido-programa{
     height: 100%;
     width: 100%;
 }
+<<<<<<< HEAD
 }
 .contenedor-video{
     display: none;
 } 
+=======
+
+>>>>>>> master
 .programa-evento{
     background: rgba(255, 255, 255, .7);
     padding: 1.5rem;
     margin-top: 5rem;
+    
 }
 @media (min-width:768px){
     .programa-evento{
