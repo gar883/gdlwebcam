@@ -111,7 +111,10 @@ h2{
 h3{
     font-size: 2.6rem;
 }
-p, a{
+h4{
+    font-size: 2.2rem;
+}
+p, a, label{
     font-size: 1.6rem;
 }
 ul{
@@ -493,6 +496,12 @@ div.detalle-evento{
     color: #fff;
     background:#11d135 ;
     border: none;
+    cursor: pointer;
+}
+.boton:focus{
+    border:none;
+    -webkit-appearance: none;
+    outline: none;
 }
 .centrar-texto{
     text-align: center;
@@ -710,6 +719,7 @@ div.detalle-evento{
         padding: 4rem 0;
         text-align: center;
         transition: all .5s;
+        height: 70vh;
     }
     .tabla-precio:hover{
         cursor: pointer;
@@ -903,6 +913,114 @@ div.detalle-evento{
         margin: 0 ;
         text-align: center;
     }
+/*** INTERNAS ***/
+/*FORMULARIO REGISTRO*/
+
+form#registro h3{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 3rem 0 0 0;
+}
+
+form#registro label{
+    margin-bottom: .5rem;
+    font-weight: bold;
+    
+}
+
+h4{
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fe4918;
+    padding-bottom: 1rem;
+    font-size: 2.2rem;
+}
+div.caja{
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+    margin: 1rem;
+}
+div.campo{
+    padding: 2rem;
+    }
+@media (min-width:992px){
+    div.campo{
+        float: left;
+        width: 33.3%;
+    }
+}
+div.paquetes .tabla-precio:hover{
+    transform: none;
+}
+div.paquetes .tabla-precio input{
+    clear: both;
+    width: 10rem;
+    margin: 0 auto;
+    display: block;
+}
+div.contenido-dia{
+    padding: 2rem;
+    
+}
+@media (min-width:992px){
+
+div.contenido-dia>div{
+    float: left;
+    width: 33.3%;
+}
+    }
+div.contenido-dia>div p{
+    text-align: left;
+}
+div.contenido-dia>div label{
+    display: block;
+    margin-bottom: 1rem;
+}
+div.contenido-dia>div input{
+    margin-right: 1rem;
+}
+div.contenido-dia>div label time{
+    color: var(--color-principal);
+    font-weight: bold;
+}
+/*RESUMEN REGISTRO*/
+.resumen p{
+    text-transform: uppercase;
+}
+.resumen .extras{
+    float: left;
+    width: 50%;
+    padding: 3rem;
+}
+.extras .orden{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.extras .orden input{
+    margin: 1rem 0 0 1rem;
+    width: 20rem;
+    height: 3rem;
+    font-size: 1.6rem;
+    display: block;
+}
+.extras .orden select{
+    display: block;
+    margin: 1rem 0 0 1rem;
+    width: 20rem;
+    height: 3rem;
+    font-size: 1.6rem;
+}
+.resumen .total{
+    float: right;
+    width: 50%;
+    padding: 3rem;
+}
+.resumen input{
+    display: block;
+    margin: 2rem auto;
+}
+
     /* ==========================================================================
    Helper classes
    ========================================================================== */
