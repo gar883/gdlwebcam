@@ -963,6 +963,7 @@ div.paquetes .tabla-precio input{
 }
 div.contenido-dia{
     padding: 2rem;
+    display: none;
     
 }
 @media (min-width:992px){

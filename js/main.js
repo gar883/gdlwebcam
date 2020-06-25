@@ -16,7 +16,6 @@
         var pase_completo = document.getElementById('pase_completo');
         
         //Botones y Divs
-        
         var calcular = document.getElementById('calcular');
         var errorDiv = document.getElementById('error');
         var btnRegistro = document.getElementById('btnRegistro');
@@ -24,12 +23,14 @@
         var suma = document.getElementById('suma_total');
         
         //Extras
-        
         var etiquetas = document.getElementById('etiquetas');
         var camisas = document.getElementById('camisa_evento');
         
-        
+        //EVENTOS
         calcular.addEventListener('click', calcularMontos);
+        pase_dia.addEventListener ('blur', mostrarDias);
+        pase_dos_dias.addEventListener('blur', mostrarDias);
+        pase_completo.addEventListener('blur', mostrarDias);
         
         function calcularMontos(event) {
             event.preventDefault();
@@ -83,16 +84,50 @@
                }// else catidad de etiquetas
                 
                 lista_productos.style.display = 'block';
-               lista_productos.innerHTML = "";
-                for(var i = 0; i < listadoProductos.length; i++){
+                lista_productos.innerHTML = "";
+                
+                for (var i = 0; i < listadoProductos.length; i++) {
                     lista_productos.innerHTML += listadoProductos[i] + '<br/>';
-                }//fin del for loop
-                
+                } //fin del for loop
+
                 suma.innerHTML = `$${totalPagar}`;
-                
-                
+                 
             }//else
         }//funcion calcular montos
+        
+        function mostrarDias(){
+            var boletoDia = parseInt(pase_dia.value, 10) || 0,
+                boletoDosDias = parseInt(pase_dos_dias.value, 10) || 0,
+                boletoCompleto = parseInt(pase_completo.value, 10) || 0;
+            
+            var diasElegidos = [];
+            if(boletoDia > 0){
+                diasElegidos.push('viernes');
+            }
+            if(boletoDosDias > 0){
+                diasElegidos.push('viernes', 'sabado');
+            }
+            if(boletoCompleto > 0){
+                diasElegidos.push('viernes', 'sabado', 'domingo');
+            }
+            
+            for(var i = 0; i < diasElegidos.length; i++){
+                document.getElementById(diasElegidos[i]).style.display = 'block';
+            }
+            
+            if(diasElegidos.includes('viernes') == false){
+                document.getElementById('viernes').style.display = 'none';
+            }
+            if(diasElegidos.includes('sabado') == false){
+                document.getElementById('sabado').style.display = 'none';
+            }
+            if(diasElegidos.includes('domingo') == false){
+                document.getElementById('domingo').style.display = 'none';
+            }
+            
+            
+        }//funcion mostrar dias
+        
         
         
     });// DOM CONTENT LOADED
