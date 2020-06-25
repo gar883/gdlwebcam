@@ -505,6 +505,8 @@ div.detalle-evento{
 }
 .centrar-texto{
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 .boton.hollow,
 .boton.hollow:hover{
@@ -1020,6 +1022,25 @@ div.contenido-dia>div label time{
     display: block;
     margin: 2rem auto;
 }
+
+/*LISTA PRODUCTOS*/
+
+div.lista-producto{
+    font-size: 1.8rem;
+    font-family: 'Oswald',
+    sans-serif;
+    background: rgb(210, 210, 210);
+    background: radial-gradient(circle, rgba(210, 210, 210, 0.8015581232492998) 5%, rgba(224, 221, 221, 0.804359243697479) 56%, rgba(219, 219, 219, 0.7987570028011204) 100%);
+    border-radius: 5px;
+    display: none;
+    }
+div#suma_total{
+    color: var(--color-principal);
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    
+}
+
 
     /* ==========================================================================
    Helper classes
