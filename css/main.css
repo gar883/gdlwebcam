@@ -737,7 +737,6 @@ div.detalle-evento{
         padding: 4rem 0;
         text-align: center;
         transition: all .5s;
-        height: 73vh;
     }
     @media (min-width:992px){
     
