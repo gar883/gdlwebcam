@@ -4,10 +4,23 @@
     var regalo = document.getElementById('regalo');
     document.addEventListener('DOMContentLoaded', function(){
         
+        //leaflet
+        var map = L.map('mapa').setView([-31.442577, -64.19318], 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([-31.442577, -64.19318]).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
+        
+        
+        
         //campos Datos Usuario
         var nombre = document.getElementById('nombre');
         var apellido = document.getElementById('apellido');
-        var email = document.getElementById('email');
+        var email = document.getElementById('correo');
         
         
         // Campos Pases
@@ -31,7 +44,65 @@
         pase_dia.addEventListener ('blur', mostrarDias);
         pase_dos_dias.addEventListener('blur', mostrarDias);
         pase_completo.addEventListener('blur', mostrarDias);
+        email.addEventListener('blur', validarEmail);
         
+        //VALIDACION DEL FORMULARIO
+        nombre.addEventListener('blur', function(){
+            if (this.value == ''){
+                errorDiv.style.display = 'block';
+                errorDiv.innerHTML = 'Este campo es Obligatorio*';
+                this.style.border = '2px solid red';
+            }
+            })// funcion nombre
+        nombre.addEventListener('keydown', function(){
+            errorDiv.style.display = 'none';
+            errorDiv.innerHTML = '';
+            this.style.border = '2px solid black';
+            this.style.borderRadius= '5px';
+        })//function keyDown
+        
+         apellido.addEventListener('blur', function(){
+            if (this.value == '') {
+                errorDiv.style.display = 'block';
+                errorDiv.innerHTML = 'Este campo es Obligatorio*';
+                this.style.border = '2px solid red';
+            }
+            })// funcion apellido
+        apellido.addEventListener('keydown', function(){
+            errorDiv.style.display = 'none';
+            errorDiv.innerHTML = '';
+            this.style.border = '1px solid black';
+            this.style.borderRadius= '5px';
+        })//function keydown apellido
+        
+         email.addEventListener('blur', function(){
+            if (this.value == '') {
+                errorDiv.style.display = 'block';
+                errorDiv.innerHTML = 'Este campo es Obligatorio*';
+                this.style.border = '2px solid red';
+            }
+            })// funcion email
+        email.addEventListener('keydown', function(){
+            errorDiv.style.display = 'none';
+            errorDiv.innerHTML = '';
+            this.style.border = '1px solid black';
+            this.style.borderRadius= '5px';
+        })//function keyDown email
+        
+        function validarEmail(){
+            if(this.value.indexOf("@") > -1 & this.value.indexOf(".") > -1){
+                errorDiv.style.display = 'none';
+                this.style.border = '1px solid black';
+            }//cierre del if
+            else{
+                errorDiv.style.display = 'block';
+                errorDiv.innerHTML = 'Debes ingresar una direccion correo electronico valida*';
+                this.style.border = '2px solid red';
+            }
+        }//cierre de funcion validar emali
+        
+        
+        // FUNCIONES 
         function calcularMontos(event) {
             event.preventDefault();
             if (regalo.value == '') {
@@ -113,6 +184,7 @@
             
             for(var i = 0; i < diasElegidos.length; i++){
                 document.getElementById(diasElegidos[i]).style.display = 'block';
+                document.getElementById(diasElegidos[i]).style.opacity = 1;
             }
             
             if(diasElegidos.includes('viernes') == false){

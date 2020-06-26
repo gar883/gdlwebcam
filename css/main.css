@@ -325,6 +325,8 @@ div.mobile-menu{
     float: right;
     text-align: right;
     margin-top: 1.2rem;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: opacity 600ms, visibility 600ms;
 }
 
 @media (min-width:768px){
@@ -532,7 +534,7 @@ div.detalle-evento{
 }
 
 @media (max-width:992px){
-#
+
 #calcular{
     margin-left: 5rem;
 }
@@ -952,7 +954,21 @@ div.caja{
 }
 div.campo{
     padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
+div.campo input{
+    flex: 0 0 calc(60% - 2rem);  
+    height: 2.2rem;
+    font-size: 1.6rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+}
+div.campo label{
+    flex:0 0 calc(40% - 2rem);
+}
 @media (min-width:992px){
     div.campo{
         float: left;
@@ -968,9 +984,12 @@ div.paquetes .tabla-precio input{
     margin: 0 auto;
     display: block;
 }
-div.contenido-dia{
+.contenido-dia{
     padding: 2rem;
     display: none;
+    opacity: 0;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
     
 }
 @media (min-width:992px){
@@ -1013,6 +1032,7 @@ div.contenido-dia>div label time{
     height: 3rem;
     font-size: 1.6rem;
     display: block;
+    border: solid 1.5px;
 }
 .extras .orden select{
     display: block;
@@ -1020,6 +1040,7 @@ div.contenido-dia>div label time{
     width: 20rem;
     height: 3rem;
     font-size: 1.6rem;
+    border: solid 1.5px;
 }
 .resumen .total{
     width: 50%;
@@ -1039,6 +1060,13 @@ div.contenido-dia>div label time{
 }
 
 /*LISTA PRODUCTOS*/
+
+#error{
+    color: var(--color-principal);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
 
 div.lista-producto{
     font-size: 1.8rem;
