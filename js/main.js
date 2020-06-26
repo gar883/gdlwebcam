@@ -5,14 +5,14 @@
     document.addEventListener('DOMContentLoaded', function(){
         
         //leaflet
-        var map = L.map('mapa').setView([-31.442577, -64.19318], 14);
+        var map = L.map('mapa').setView([-31.442577, -64.19318], 16);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         L.marker([-31.442577, -64.19318]).addTo(map)
-            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .bindPopup('Universidad Tecnologica Nacional.<br> Facultad Regional Córdoba.')
             .openPopup();
         
         
