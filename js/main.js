@@ -13,7 +13,7 @@
 
         L.marker([-31.442577, -64.19318]).addTo(map)
             .bindPopup('Universidad Tecnologica Nacional.<br> Facultad Regional Córdoba.')
-            .openPopup();
+            .openPopup()
         
         
         

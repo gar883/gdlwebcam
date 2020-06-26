@@ -494,7 +494,7 @@ div.detalle-evento{
     border: 2px solid var(--color-principal);    
 }
 .boton:hover{
-    transform: scale(1.1);
+    
     color: #fff;
     background:#11d135 ;
     border: none;
@@ -528,7 +528,7 @@ div.detalle-evento{
 }
 .boton.transparente:hover{
     background: var(--color-principal);
-    transform: scale(1.1);
+    
     box-shadow: rgba(0, 0, 0, .9);
     border:2px solid var(--color-principal);;
 }
@@ -639,7 +639,7 @@ div.detalle-evento{
         -webkit-filter: grayscale();
         -webkit-transition: all .5s ease-in-out;
     }
-
+    
     .imagen-invitado:hover {
         cursor: pointer;
         filter: none;
@@ -732,12 +732,16 @@ div.detalle-evento{
         transition: all .5s;
         height: 73vh;
     }
+    @media (min-width:992px){
+    
+    
     .tabla-precio:hover{
         cursor: pointer;
         transform: scale(1.1);
         border: var(--color-principal);
         box-shadow: 0px 0px 50px #666;
     }
+        }
     .tabla-precio ul li{
         font-family: 'PT Sans', sans-serif;
         font-size: 1.5rem;
