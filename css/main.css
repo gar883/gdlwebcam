@@ -530,6 +530,13 @@ div.detalle-evento{
     box-shadow: rgba(0, 0, 0, .9);
     border:2px solid var(--color-principal);;
 }
+
+@media (max-width:992px){
+#
+#calcular{
+    margin-left: 5rem;
+}
+}
 /*INVITADOS*/
 .contenedor-invitados {
     display: grid;
@@ -721,7 +728,7 @@ div.detalle-evento{
         padding: 4rem 0;
         text-align: center;
         transition: all .5s;
-        height: 70vh;
+        height: 73vh;
     }
     .tabla-precio:hover{
         cursor: pointer;
@@ -1015,10 +1022,17 @@ div.contenido-dia>div label time{
     font-size: 1.6rem;
 }
 .resumen .total{
+    width: 50%;
+    margin: 0 auto;
+}
+@media (min-width:992px){
+
+.resumen .total{
     float: right;
     width: 50%;
     padding: 3rem;
 }
+    }
 .resumen input{
     display: block;
     margin: 2rem auto;
