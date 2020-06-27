@@ -6,19 +6,28 @@
     document.addEventListener('DOMContentLoaded', function(){
         
         //leaflet
-        if (document.getElementById('mapa')) {
+
+        if (document.getElementById('mapa')){
             var map = L.map('mapa').setView([-31.442577, -64.19318], 16);
 
+      if(document.getElementById('mapa')){
+        var map = L.map('mapa').setView([-31.442577, -64.19318], 16);
+
+
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
+
 
             L.marker([-31.442577, -64.19318]).addTo(map)
                 .bindPopup('Universidad Tecnologica Nacional.<br> Facultad Regional Córdoba.')
                 .openPopup();
 
         }
-        
+
+        L.marker([-31.442577, -64.19318]).addTo(map)
+            .bindPopup('Universidad Tecnologica Nacional.<br> Facultad Regional Córdoba.')
+            .openPopup(); } 
         
         //campos Datos Usuario
         var nombre = document.getElementById('nombre');
