@@ -2,19 +2,22 @@
  'use strict';
     
     var regalo = document.getElementById('regalo');
+    
     document.addEventListener('DOMContentLoaded', function(){
         
         //leaflet
-        var map = L.map('mapa').setView([-31.442577, -64.19318], 16);
+        if (document.getElementById('mapa')) {
+            var map = L.map('mapa').setView([-31.442577, -64.19318], 16);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
 
-        L.marker([-31.442577, -64.19318]).addTo(map)
-            .bindPopup('Universidad Tecnologica Nacional.<br> Facultad Regional Córdoba.')
-            .openPopup()
-        
+            L.marker([-31.442577, -64.19318]).addTo(map)
+                .bindPopup('Universidad Tecnologica Nacional.<br> Facultad Regional Córdoba.')
+                .openPopup();
+
+        }
         
         
         //campos Datos Usuario
@@ -29,7 +32,7 @@
         var pase_completo = document.getElementById('pase_completo');
         
         //Botones y Divs
-        var calcular = document.getElementById('calcular');
+        var Calcular = document.getElementById('calcular');
         var errorDiv = document.getElementById('error');
         var btnRegistro = document.getElementById('btnRegistro');
         var lista_productos = document.getElementById('lista_productos');
@@ -40,8 +43,8 @@
         var camisas = document.getElementById('camisa_evento');
         
         //EVENTOS
-        calcular.addEventListener('click', calcularMontos);
-        pase_dia.addEventListener ('blur', mostrarDias);
+        Calcular.addEventListener('click', calcularMontos);
+        pase_dia.addEventListener('blur', mostrarDias);
         pase_dos_dias.addEventListener('blur', mostrarDias);
         pase_completo.addEventListener('blur', mostrarDias);
         email.addEventListener('blur', validarEmail);
@@ -199,8 +202,8 @@
             
             
         }//funcion mostrar dias
-        
-        
+         
+  
         
     });// DOM CONTENT LOADED
     
