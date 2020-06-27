@@ -5,6 +5,7 @@
     document.addEventListener('DOMContentLoaded', function(){
         
         //leaflet
+      if(document.getElementById('mapa')){
         var map = L.map('mapa').setView([-31.442577, -64.19318], 16);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -15,7 +16,7 @@
             .bindPopup('Universidad Tecnologica Nacional.<br> Facultad Regional Córdoba.')
             .openPopup();
         
-        
+       } 
         
         //campos Datos Usuario
         var nombre = document.getElementById('nombre');
