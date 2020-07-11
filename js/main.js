@@ -1,3 +1,39 @@
+$(function() {
+
+
+
+    $('.menu-programa a:first').addClass('activo');
+    $('.programa-evento .info-curso:first').show();
+
+    $('.menu-programa a').on('click', function() {
+        $('.menu-programa a').removeClass('activo');
+        $('div.ocultar').hide();
+        var enlace = $(this).attr('href');
+        $(enlace).fadeIn(500);
+        $(this).addClass('activo');
+
+        return false;
+
+    }); //final del evento click
+
+    //ANIMACIONES PARA LOS NUMEROS
+
+    $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6 }, 1200);
+    $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 1200);
+    $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 1500);
+    $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 1200);
+
+    //CUENTA REGRESIVA
+
+    $('.cuenta-regresiva').countdown('2020/12/10 09:00:00', function(event) {
+        $('#dias').html(event.strftime('%D'));
+        $('#horas').html(event.strftime('%H'));
+        $('#minutos').html(event.strftime('%M'));
+        $('#segundos').html(event.strftime('%S'));
+    });
+
+}); //final del dom con jquery
+
 (function() {
     'use strict';
 
@@ -35,7 +71,7 @@
         var pase_completo = document.getElementById('pase_completo');
 
         //Botones y Divs
-        var Calcular = document.getElementById('calcular');
+        var calcular = document.getElementById('calcular');
         var errorDiv = document.getElementById('error');
         var btnRegistro = document.getElementById('btnRegistro');
         var lista_productos = document.getElementById('lista_productos');
@@ -46,7 +82,7 @@
         var camisas = document.getElementById('camisa_evento');
 
         //EVENTOS
-        Calcular.addEventListener('click', calcularMontos);
+        calcular.addEventListener('click', calcularMontos);
         pase_dia.addEventListener('blur', mostrarDias);
         pase_dos_dias.addEventListener('blur', mostrarDias);
         pase_completo.addEventListener('blur', mostrarDias);
