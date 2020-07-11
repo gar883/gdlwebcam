@@ -1,6 +1,24 @@
 $(function() {
 
+    //TITULO ANIMADO LETTERING
 
+    $('.nombre-sitio').lettering();
+    //MENU FIJO
+    var ventanaAltura = $(window).height();
+    var barraAltura = $('.barra').innerHeight();
+    var alturaInvitados = $('.invitados').innerHeight();
+
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll > ventanaAltura) {
+            $('.barra').addClass('fixed');
+            $('body').css({ 'margin-top': barraAltura + 'px' });
+        } else {
+            $('.barra').removeClass('fixed');
+            $('body').css({ 'margin-top': '0px' });
+        }
+
+    });
 
     $('.menu-programa a:first').addClass('activo');
     $('.programa-evento .info-curso:first').show();
@@ -15,13 +33,27 @@ $(function() {
         return false;
 
     }); //final del evento click
+    //MENU RESPONSIVE
+    var visible = $('.mobile-menu i').css('display');
+    console.log(visible);
+
+
+    $('.mobile-menu i').on('click', function() {
+        $('.navegacion-principal').slideToggle();
+    });
+
+
+
+
 
     //ANIMACIONES PARA LOS NUMEROS
 
-    $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6 }, 1200);
-    $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 1200);
-    $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 1500);
-    $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 1200);
+
+    $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6 }, 3000);
+    $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 3000);
+    $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 5000);
+    $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 3000);
+
 
     //CUENTA REGRESIVA
 
@@ -31,6 +63,8 @@ $(function() {
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
     });
+
+
 
 }); //final del dom con jquery
 

@@ -298,11 +298,65 @@ h1.nombre-sitio {
 }
 
 
+/*LETTERING*/
+
+h1.nombre-sitio span {
+    position: relative;
+    text-shadow: 0 0 30px black;
+}
+
+@media (min-width:992px) {
+    .char1 {
+        top: 2rem;
+        right: 2rem;
+    }
+    .char2 {
+        top: 0;
+        left: -1rem;
+        color: var(--color-principal);
+    }
+    .char3 {
+        top: 1rem;
+        right: 2rem;
+    }
+    .char4 {
+        top: 1rem;
+        right: 1rem;
+    }
+    .char5 {
+        top: -1.5rem;
+        right: 1rem;
+        color: var(--color-principal)
+    }
+    .char6 {
+        top: 1rem;
+        left: -1rem;
+    }
+    .char7 {
+        top: 2rem;
+        left: -1rem;
+    }
+    .char8 {
+        top: 0;
+        left: -1rem;
+    }
+    .char9 {
+        top: 1rem;
+        right: 2rem;
+    }
+    .char10 {
+        top: 2rem;
+        right: 2rem;
+        color: var(--color-principal)
+    }
+}
+
+
 /*BARRA*/
 
 .barra {
     background: #353535;
-    padding: 2rem 0;
+    padding-top: 1rem;
 }
 
 .logo {
@@ -312,6 +366,7 @@ h1.nombre-sitio {
 
 div.logo img {
     width: 100%;
+    margin-top: -7px;
 }
 
 @media (min-width:768px) {
@@ -320,11 +375,24 @@ div.logo img {
     }
 }
 
+.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
 
 /*Navegacion principal*/
 
 nav.navegacion-principal {
-    display: none;
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 nav.navegacion-principal a {
@@ -343,7 +411,7 @@ nav.navegacion-principal a {
 }
 
 nav.navegacion-principal a:first-child {
-    margin-top: 1rem
+    margin-top: 1rem;
 }
 
 nav.navegacion-principal a:last-child {
@@ -365,12 +433,11 @@ nav.navegacion-principal a:hover {
         /*Toma el restante que no va a tomar el .logo*/
         float: right;
         text-align: right;
-        display: block;
+        display: block!important;
     }
     nav.navegacion-principal a {
         margin-right: 1rem;
         padding: 1rem;
-        width: auto;
         display: inline;
         text-align: center;
         margin: 0 1rem 0 0;
@@ -384,12 +451,20 @@ nav.navegacion-principal a:hover {
 
 /*MOBILE MENU*/
 
+div.barra.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.barra .contenedor .logo {
+    flex-grow: 2;
+}
+
 div.mobile-menu {
     width: 6rem;
     display: block;
     float: right;
     text-align: right;
-    margin-top: 1.2rem;
     -webkit-transition: opacity 600ms, visibility 600ms;
     transition: opacity 600ms, visibility 600ms;
 }
@@ -400,10 +475,10 @@ div.mobile-menu {
     }
 }
 
-div.mobile-menu span {
-    height: .8rem;
-    margin-bottom: .6rem;
-    background: white;
+div.mobile-menu i {
+    font-size: 40px;
+    margin: -5px 10px 10px 0;
+    color: white;
     display: block;
 }
 
@@ -868,6 +943,7 @@ p.numero {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    z-index: 1;
 }
 
 /*TESTIMONIALES*/
@@ -1021,6 +1097,23 @@ p.copyright {
 }
 
 /*** INTERNAS ***/
+
+/*CONFERENCIA*/
+body.conferencia .navegacion-principal .activo {
+    border-bottom: 2px solid var(--color-principal);
+}
+div.galeria {
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: .5rem;
+    row-gap: .5rem;
+    justify-content: center;
+}
+div.galeria a {
+    margin: 0 auto;
+}
 
 /*FORMULARIO REGISTRO*/
 form#registro h3 {
